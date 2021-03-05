@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="main">
+  
+        <h2>Bank Loan Service</h2>
+        <div class="login-or">
+          <hr class="hr-or">
+        </div>
+        <h4>Administrator</h4>
+  
+        <form role="form" #logadmin = "ngForm" (ngSubmit) = "onClickSubmit(logadmin)">
+          <div class="form-group">
+            <label for="inputUsernameEmail">Username</label>
+            <input type="text" #username="ngModel" ngModel class="form-control" id="inputUsernameEmail">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" #password="ngModel" ngModel class="form-control" id="inputPassword">
+          </div>
+          <button type="submit" class="btn btn btn-primary">
+            Log In
+          </button>
+        </form>
+      
+      </div>
+      
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>Type name</th>
+                <th>Interest Rate</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let loantype of listLoanTypes">
+                <td>{{loantype.typeName}}</td>
+                <td>{{loantype.interestRate}}</td>
+                <td>{{loantype.duration}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="main">
+  
+        <h2>Bank Loan Service</h2>
+        <div class="login-or">
+          <hr class="hr-or">
+        </div>
+        <h4>Customer Registration</h4>
+  
+        <form role="form" #regcus = "ngForm" (ngSubmit) = "onClickSubmit(regcus)">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" #fname="ngModel" ngModel class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" #lname="ngModel" ngModel class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Gender</label>
+            <input type="text" name="gender" #gender="ngModel" ngModel class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" #email="ngModel" ngModel class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" name="address" #address="ngModel" ngModel class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" #password="ngModel" ngModel class="form-control" required>
+          </div>
+          <hr />
+
+          <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+          </ngb-alert>
+          <button type="submit" class="btn btn btn-primary">
+            Register
+          </button>
+        </form>
+
+        <!-- <ngb-alert #staticAlert *ngIf="staticAlertClosed" (closed)="staticAlertClosed = true">Check out our awesome new
+          features!</ngb-alert> -->
+        
+        
+        
+        <p>Have a account? <a class="pull-right" routerLink="/customerlogin" routerLinkActive="active">Login</a></p>
+      
+      </div>
+      
+    </div>
+  </div>
