@@ -1,9 +1,7 @@
 package com.bank.assignment1.Controller;
 
-import com.bank.assignment1.Entity.AuthRequest;
-import com.bank.assignment1.Entity.customer;
-import com.bank.assignment1.Entity.loanDetails;
-import com.bank.assignment1.Entity.loanTypes;
+import com.bank.assignment1.Entity.*;
+import com.bank.assignment1.Repository.UserRepository;
 import com.bank.assignment1.Repository.customerRepository;
 import com.bank.assignment1.Repository.loanDetailsRepository;
 import com.bank.assignment1.Repository.loanTypesRepository;
@@ -32,6 +30,15 @@ public class loanController {
     @Autowired
     private loanTypesRepository LoanTypRepo;
 
+    @Autowired
+    private UserRepository UserRepo;
+
+    @Autowired
+    private JwtUtill jwtUtill;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
     @PostMapping("/save")
     public customer save(@RequestBody loanRequest request){
 
@@ -55,6 +62,11 @@ public class loanController {
         return LoanTypRepo.findAll();
     }
 
+    @GetMapping("/allUser")
+    public List<User> findAllUsers(){
+        return UserRepo.findAll();
+    }
+
     @PostMapping("/addLoanDetails")
     public loanDetails add(@RequestBody getLoanDetails request){
         return LoanDetRepo.save(request.getLoanDetail());
@@ -70,12 +82,6 @@ public class loanController {
     public customer get(Integer id){
         return CusRepo.findById(id).get();
     }
-
-    @Autowired
-    private JwtUtill jwtUtill;
-
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
     @GetMapping("/")
     public String welcome(){

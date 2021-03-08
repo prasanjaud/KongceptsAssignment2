@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { CusdashboardComponent } from './cusdashboard/cusdashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewLoanDetailsComponent } from './cusdashboard/view-loan-details/view-loan-details.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ViewLoanDetailsComponent } from './cusdashboard/view-loan-details/view-
     RegistercustomerComponent,
     CusdashboardComponent,
     ViewLoanDetailsComponent,
+    AdmindashboardComponent,
   ],
   imports: [
     BrowserModule,

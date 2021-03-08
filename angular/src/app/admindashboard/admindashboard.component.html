@@ -1,0 +1,64 @@
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Bank Loan Sevice</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/view-loan-details" routerLinkActive="active">
+            <i class="fa fa-home"></i>
+            Home
+            </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fa fa-table">
+              <!-- <span class="badge badge-danger">11</span> -->
+            </i>
+            All Customers
+          </a>
+        </li>
+
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fa fa-file">
+            </i>
+            Request a Loan
+          </a>
+        </li> -->
+
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+      <div class="row col-md-6 col-md-offset-2 custyle">
+      <table class="table table-striped custab">
+          <thead>
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let customer of listCustomer">
+                  <td>{{customer.fname}}</td>
+                  <td>{{customer.lname}}</td>
+                  <td>{{customer.email}}</td>
+                  <td>{{customer.gender}}</td>
+                  <td>{{customer.address}}</td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+  </div>
+
+  <app-root></app-root>
+
+  <footer>
+    <p>All rights reserved.</p>
+</footer>
